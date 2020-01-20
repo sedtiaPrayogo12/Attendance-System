@@ -36,7 +36,7 @@ public class MainActivity extends Activity {
     private TextInputEditText Password;
     private Button login;
     private int counter = 5;
-    private Button btnAbsent;
+
 
     @TargetApi(Build.VERSION_CODES.LOLLIPOP)
     @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
@@ -52,39 +52,6 @@ public class MainActivity extends Activity {
         Name = findViewById(R.id.uname);
         Password = findViewById(R.id.password);
         login = findViewById(R.id.btn_signin);
-        btnAbsent = findViewById(R.id.absent);
-
-        btnAbsent.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-
-                ApiRequestAttendance api = Retroserver.getClient().create(ApiRequestAttendance.class);
-
-               Call<ResponsModel> sendattend = api.sendAttendance("1276867", "Sedtia Prayogo Budi Tirto Arto", "11","Rekayasa Perangkat Lunak");
-                sendattend.enqueue(new Callback<ResponsModel>() {
-                    @Override
-                    public void onResponse(retrofit2.Call<ResponsModel> call, Response<ResponsModel> response) {
-                        Log.d("RETRO", "response : " + response.body().toString());
-                        String kode = response.body().getKode();
-
-                        if(kode.equals("1"))
-                        {
-                            Toast.makeText(MainActivity.this, "Data berhasil disimpan", Toast.LENGTH_SHORT).show();
-                        }else
-                        {
-                            Toast.makeText(MainActivity.this, "Data Error tidak berhasil disimpan", Toast.LENGTH_SHORT).show();
-
-                        }
-                    }
-
-                    @Override
-                    public void onFailure(retrofit2.Call<ResponsModel> call, Throwable t) {
-                        Log.d("RETRO", "Falure : " + "Gagal Mengirim Request");
-                    }
-                });
-            }
-        });
 
         login.setOnClickListener(new View.OnClickListener() {
             @Override

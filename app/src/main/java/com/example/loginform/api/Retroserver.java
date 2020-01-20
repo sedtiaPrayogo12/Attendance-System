@@ -4,7 +4,7 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class Retroserver {
-    private static final String base_url = "http://10.212.0.1/andro-api/attendance/insert.php";
+    private static final String base_url = "http://192.168.43.144/andro-api/attendance/";
 
     private static Retrofit retrofit;
 
