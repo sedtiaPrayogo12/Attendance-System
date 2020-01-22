@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Student Attendance</string>
+    <string name="good_morning">Good Morning</string>
+    <string name="gooo_night">Good Night</string>
 </resources>

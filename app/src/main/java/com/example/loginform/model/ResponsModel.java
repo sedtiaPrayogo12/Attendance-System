@@ -1,13 +1,23 @@
 package com.example.loginform.model;
 
-public class ResponsModel {
-    String kode,pesan;
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
 
-    public String getKode() {
+public class ResponsModel {
+
+    @SerializedName("kode")
+    @Expose
+    public int kode;
+    @SerializedName("pesan")
+    @Expose
+    public String pesan;
+
+
+    public int getKode() {
         return kode;
     }
 
-    public void setKode(String kode) {
+    public void setKode(int kode) {
         this.kode = kode;
     }
 
