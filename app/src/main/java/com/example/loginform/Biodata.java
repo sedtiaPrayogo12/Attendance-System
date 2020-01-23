@@ -58,11 +58,13 @@ public class Biodata extends AppCompatActivity {
                     @Override
                     public void onFailure(retrofit2.Call<ResponsModel> call, Throwable t) {
                         Log.d("RETRO", "Falure : " + "Gagal Mengirim Request");
+                        Toast.makeText(Biodata.this, "Gagal Mengirim Request", Toast.LENGTH_SHORT).show();
                     }
                 });
 //                Toast.makeText(Biodata.this, "Anda sudah Absen",Toast.LENGTH_SHORT).show();
             }
         });
+
 
     }
 }
